@@ -17,8 +17,74 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
 </head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    /* Fullscreen Loader */
+    #loader {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        z-index: 9999;
+    }
 
+    /* Loader Content */
+    .loader-content {
+        text-align: center;
+    }
+
+    /* Loading Text */
+    .loader-text {
+      font-family: "Pacifico", serif;
+        font-size: 24px;
+        color: #ff00d4;
+        margin-bottom: 15px;
+    }
+
+    /* Spinner Animation */
+    .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(0, 0, 0, 0.1);
+        border-top: 5px solid #ff00c8;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+        .loader-logo {
+            width: 80px;
+        }
+        .loader-text {
+            font-size: 20px;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+        }
+    }
+  </style>
 <body>
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-content">
+      <!-- <img src="img/loading.png" alt="Crochetastic Logo" class="loader-logo"> -->
+      <h2 class="loader-text">Crochetastic</h2>
+      <div class="spinner"></div>
+  </div>
+</div>
+
     <!-- HEADER -->
     <div id="1"></div>
     <script>
@@ -85,6 +151,10 @@
         autoplay: true,
         autoplaySpeed: 1500,
         });
+    });
+// Hide loader when page fully loads
+window.addEventListener("load", function() {
+        document.getElementById("loader").style.display = "none";
     });
 </script>
 <!-- slider JS ENDS -->
