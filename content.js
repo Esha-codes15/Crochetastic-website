@@ -33,7 +33,7 @@ let contentTitle = [
   },
   {
     id: "5",
-    name: "Hand Knitted Bouquet Photo Frames",
+    name: "Bouquet Photo Frames",
     brand: "Crochetastic",
     price: 100,
     preview: "img/content-5(1).jpeg",
@@ -41,7 +41,7 @@ let contentTitle = [
   },
    {
     id: "6",
-    name: "Autumn Bloom Handmade Wear",
+    name: "Autumn Bloom Wear",
     brand: "Crochetastic",
     price: 200,
     preview: "img/content2-1.jpeg",

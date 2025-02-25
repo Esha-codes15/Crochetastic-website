@@ -1,166 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="stylesheet" href="/style.css"> -->
-    <title> Crochetastic</title>
-    <!-- favicon -->
-    <link rel="icon" href="img/Crochetastic.png" type="image/gif" sizes="16x16">
-    <!-- header links -->
-    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <!-- slider links -->
-    <!-- <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
-    <script src="js/jQuery3.4.1.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
-</head>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Crochetastic</title>
+  <!-- favicon -->
+  <link rel="icon" href="img/Crochetastic.png" type="image/gif" sizes="16x16" />
+  <!-- header links -->
+  <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+  <!-- slider links -->
+  <script src="js/jQuery3.4.1.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+  />
+  <!-- External CSS for Chatbot (optional) -->
+  <link rel="stylesheet" href="css/chatbot.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
     /* Fullscreen Loader */
     #loader {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        z-index: 9999;
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
     }
-
-    /* Loader Content */
     .loader-content {
-        text-align: center;
+      text-align: center;
     }
-
-    /* Loading Text */
     .loader-text {
       font-family: "Pacifico", serif;
-        font-size: 24px;
-        color: #ff00d4;
-        margin-bottom: 15px;
-        font-weight: 500;
+      font-size: 24px;
+      color: #ff00d4;
+      margin-bottom: 15px;
+      font-weight: 500;
     }
-
-    /* Spinner Animation */
     .spinner {
-        width: 50px;
-        height: 50px;
-        border: 5px solid rgba(0, 0, 0, 0.1);
-        border-top: 5px solid #ff00c8;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin: 0 auto;
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(0, 0, 0, 0.1);
+      border-top: 5px solid #ff00c8;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
     }
-
     @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
-
     /* Mobile Responsiveness */
     @media (max-width: 768px) {
-        .loader-logo {
-            width: 80px;
-        }
-        .loader-text {
-            font-size: 24px;
-        }
-        .spinner {
-            width: 40px;
-            height: 40px;
-        }
+      .loader-logo {
+        width: 80px;
+      }
+      .loader-text {
+        font-size: 24px;
+      }
+      .spinner {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    /* Chatbot Container (fixed size) */
+    #chatbot-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 320px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      font-family: "Lato", sans-serif;
+    }
+    /* Chatbot Header */
+    #chatbot-header {
+      background-color: #ff00d4;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #chatbot-header button {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    /* Chatbot Body & Messages */
+    #chatbot-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    #chatbot-messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+    .bot-message {
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      word-wrap: break-word;
+    }
+    .user-message {
+      background-color: #dcf8c6;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      align-self: flex-end;
+      word-wrap: break-word;
+    }
+    /* Input Area */
+    #chatbot-input-container {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+    #chatbot-input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      font-size: 14px;
+      outline: none;
+    }
+    #chatbot-send {
+      width: 60px;
+      border: none;
+      background-color: #ff00d4;
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    /* Product Option Card */
+    .product-option {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+    .product-image {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    .product-info {
+      flex: 1;
+      font-size: 13px;
+    }
+    .select-btn {
+      background-color: #ff00d4;
+      border: none;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    .whatsapp-btn {
+      background-color: #25d366;
+      border: none;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    /* Button for "Start Over" */
+    .start-over-btn {
+      background-color: #007bff;
+      border: none;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+      cursor: pointer;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+    /* Category Option Button */
+    .bot-message button {
+      background-color: #ff00d4;
+      border: none;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+      cursor: pointer;
+      margin: 5px 5px 5px 0;
     }
   </style>
+</head>
+
 <body>
-<!-- LOADER -->
-<div id="loader">
-  <div class="loader-content">
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-content">
       <!-- <img src="img/loading.png" alt="Crochetastic Logo" class="loader-logo"> -->
       <h2 class="loader-text">Crochetastic</h2>
       <div class="spinner"></div>
+    </div>
   </div>
-</div>
 
-    <!-- HEADER -->
-    <div id="1"></div>
-    <script>
-        load("header.html");
-        function load(url)
-        {
-            req = new XMLHttpRequest();
-            req.open("GET", url, false);
-            req.send(null);
-            document.getElementById(1).innerHTML = req.responseText;
-        }
-    </script>
-    <!-- SLIDER -->
-    <div id="2"></div>
-    <script>
-        load("slider.html");
-        function load(url)
-        {
-            req = new XMLHttpRequest();
-            req.open("GET", url, false);
-            req.send(null);
-            document.getElementById(2).innerHTML = req.responseText;
-        }
-    </script>
+  <!-- HEADER -->
+  <div id="1"></div>
+  <script>
+    load("header.html");
+    function load(url) {
+      req = new XMLHttpRequest();
+      req.open("GET", url, false);
+      req.send(null);
+      document.getElementById(1).innerHTML = req.responseText;
+    }
+  </script>
+  <!-- SLIDER -->
+  <div id="2"></div>
+  <script>
+    load("slider.html");
+    function load(url) {
+      req = new XMLHttpRequest();
+      req.open("GET", url, false);
+      req.send(null);
+      document.getElementById(2).innerHTML = req.responseText;
+    }
+  </script>
 
-    <!-- CONTENT SECTION -->
-    <div id="3"></div>
-    <script>
-        load("content.html");
-        function load(url)
-        {
-            req = new XMLHttpRequest();
-            req.open("GET", url, false);
-            req.send(null);
-            document.getElementById(3).innerHTML = req.responseText;
-        }
-    </script>
+  <!-- CONTENT SECTION -->
+  <div id="3"></div>
+  <script>
+    load("content.html");
+    function load(url) {
+      req = new XMLHttpRequest();
+      req.open("GET", url, false);
+      req.send(null);
+      document.getElementById(3).innerHTML = req.responseText;
+    }
+  </script>
 
-    <!-- FOOTER -->
-    <div id="4"></div>
-    <script>
-        load("footer.html");
-        function load(url)
-        {
-            req = new XMLHttpRequest();
-            req.open("GET", url, false);
-            req.send(null);
-            document.getElementById(4).innerHTML = req.responseText;
-        }
-    </script>
+  <!-- FOOTER -->
+  <div id="4"></div>
+  <script>
+    load("footer.html");
+    function load(url) {
+      req = new XMLHttpRequest();
+      req.open("GET", url, false);
+      req.send(null);
+      document.getElementById(4).innerHTML = req.responseText;
+    }
+  </script>
 
-</body>
+  <!-- Chatbot Widget -->
+  <!-- Chatbot container is shown after loader hides; chatbot body is hidden by default -->
+  <div id="chatbot-container" style="display: none;">
+    <div id="chatbot-header">
+      <span>Chat with Crochetastic</span>
+      <!-- Set initial toggle button to plus sign -->
+      <button id="chatbot-toggle">+</button>
+    </div>
+    <div id="chatbot-body" style="display: none;">
+      <div id="chatbot-messages">
+        <div class="bot-message">
+          Hi there! How can I help you today? Please type a message to continue.
+        </div>
+      </div>
+      <div id="chatbot-input-container">
+        <input type="text" id="chatbot-input" placeholder="Type your message..." />
+        <button id="chatbot-send">Send</button>
+      </div>
+    </div>
+  </div>
 
-<!-- slider JS START -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-<script>
-    $(document).ready(function()
-    {
-    $('#containerSlider').slick({
+  <!-- slider JS START -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#containerSlider").slick({
         dots: true,
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 1500,
-        });
+      });
     });
-// Hide loader when page fully loads
-window.addEventListener("load", function() {
-        document.getElementById("loader").style.display = "none";
+
+    // Hide loader and show chatbot container after page fully loads
+    window.addEventListener("load", function () {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("chatbot-container").style.display = "flex";
     });
-</script>
-<!-- slider JS ENDS -->
 
-<!-- content JS -->
-<script src="content.js"></script>
+    // ------------------ CHATBOT LOGIC ------------------
 
+    // 1) Product Data
+    const products = [
+      {
+        id: "1",
+        name: "Handmade Bouquet",
+        brand: "Crochetastic",
+        price: 50,
+        preview: "img/content-1.jpeg",
+        isAccessory: false,
+      },
+      {
+        id: "2",
+        name: "Sunbeam Buddy",
+        brand: "Crochetastic",
+        price: 20,
+        preview: "img/content-2(1).jpeg",
+        isAccessory: false,
+      },
+      {
+        id: "3",
+        name: "Pink Handbag",
+        brand: "Crochetastic",
+        price: 180,
+        preview: "img/content-3(1).jpeg",
+        isAccessory: false,
+      },
+      {
+        id: "4",
+        name: "Crochet beanies",
+        brand: "Crochetastic",
+        price: 30,
+        preview: "img/content-4(1).jpeg",
+        isAccessory: false,
+      },
+      {
+        id: "5",
+        name: "Bouquet Photo Frames",
+        brand: "Crochetastic",
+        price: 100,
+        preview: "img/content-5(1).jpeg",
+        isAccessory: false,
+      },
+      {
+        id: "6",
+        name: "Autumn Bloom Wear",
+        brand: "Crochetastic",
+        price: 200,
+        preview: "img/content2-1.jpeg",
+        isAccessory: true,
+      },
+      {
+        id: "7",
+        name: "Baby Bear Snuggle",
+        brand: "Crochetastic",
+        price: 150,
+        preview: "img/content2-2.jpeg",
+        isAccessory: true,
+      },
+      {
+        id: "8",
+        name: "Bear Cub Hoodie",
+        brand: "Crochetastic",
+        price: 200,
+        preview: "img/content2-3.jpeg",
+        isAccessory: true,
+      },
+      {
+        id: "9",
+        name: "Panda Snuggle Tee",
+        brand: "Crochetastic",
+        price: 200,
+        preview: "img/content2-4.jpeg",
+        isAccessory: true,
+      },
+      {
+        id: "10",
+        name: "Neon Green Lily",
+        brand: "Crochetastic",
+        price: 250,
+        preview: "img/content2-5.png",
+        isAccessory: true,
+      },
+    ];
+
+    // 2) Your WhatsApp number
+    const whatsappNumber = "+971526286151";
+
+    // Flag to track if categories were shown
+    let categoryOptionsShown = false;
+
+    // Append a message to the chat area
+    function appendMessage(message, type = "bot") {
+      const messagesDiv = document.getElementById("chatbot-messages");
+      const messageDiv = document.createElement("div");
+      messageDiv.className = type === "bot" ? "bot-message" : "user-message";
+      messageDiv.innerHTML = message;
+      messagesDiv.appendChild(messageDiv);
+      // Auto-scroll to bottom
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    // Reset the chatbot to the initial greeting
+    function resetChat() {
+      categoryOptionsShown = false;
+      const messagesDiv = document.getElementById("chatbot-messages");
+      messagesDiv.innerHTML = `
+        <div class="bot-message">
+          Hi there! How can I help you today? Please type a message to continue.
+        </div>`;
+    }
+
+    // Handle user text message input
+    function handleUserMessage() {
+      const input = document.getElementById("chatbot-input");
+      const msg = input.value.trim();
+      if (msg !== "") {
+        appendMessage(msg, "user");
+        input.value = "";
+
+        // Show category options only once, after first user message
+        if (!categoryOptionsShown) {
+          appendMessage(
+            `Great! Are you looking for:<br>
+             <button onclick="selectCategory('clothes')">Handmade Clothes</button>
+             <button onclick="selectCategory('handmade')">Handmade Stuffs</button>`
+          );
+          categoryOptionsShown = true;
+        }
+      }
+    }
+
+    // Select category => Clear chat, show new category's products
+    function selectCategory(category) {
+      const messagesDiv = document.getElementById("chatbot-messages");
+      // Clear the chat area so only this category is displayed
+      messagesDiv.innerHTML = "";
+
+      // Show "Here are our X products"
+      appendMessage(`Here are our ${category} products:`);
+
+      let filteredProducts = [];
+      if (category === "handmade") {
+        filteredProducts = products.filter((p) => p.isAccessory === false);
+      } else if (category === "clothes") {
+        filteredProducts = products.filter((p) => p.isAccessory === true);
+      }
+      displayProductOptions(filteredProducts);
+    }
+
+    // Display product options
+    function displayProductOptions(filteredProducts) {
+      const messagesDiv = document.getElementById("chatbot-messages");
+
+      // Create a single "bot-message" container to hold all product cards
+      const containerDiv = document.createElement("div");
+      containerDiv.classList.add("bot-message");
+
+      filteredProducts.forEach((product) => {
+        const productCard = document.createElement("div");
+        productCard.className = "product-option";
+        productCard.innerHTML = `
+          <img src="${product.preview}" alt="${product.name}" class="product-image" />
+          <div class="product-info">
+            <strong>${product.name}</strong>
+            <div>Brand: ${product.brand}</div>
+            <div>Price: ${product.price} Dhs</div>
+          </div>
+          <button class="select-btn" onclick="selectProduct('${product.id}')">Select</button>
+        `;
+        containerDiv.appendChild(productCard);
+      });
+
+      messagesDiv.appendChild(containerDiv);
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    // Show detailed view for a selected product
+    function selectProduct(productId) {
+      const product = products.find((p) => p.id === productId);
+      const messagesDiv = document.getElementById("chatbot-messages");
+
+      // Clear out the previous product list
+      messagesDiv.innerHTML = "";
+
+      // Append product detail
+      messagesDiv.innerHTML += `
+        <div class="bot-message">
+          <img src="${product.preview}" alt="${product.name}"
+               style="width:100%; max-height:200px; object-fit:cover; border-radius:5px; margin-bottom:10px;">
+          <strong>${product.name}</strong><br>
+          Brand: ${product.brand}<br>
+          Price: ${product.price} Dhs<br><br>
+          <button class="whatsapp-btn" onclick="buyProduct('${encodeURIComponent(
+            product.name
+          )}', '${product.price}')">Buy on WhatsApp</button>
+        </div>
+      `;
+
+      // Append final message => "Start Over"
+      messagesDiv.innerHTML += `
+        <div class="bot-message">
+          Would you like to start the chat again from the beginning?
+          <button class="start-over-btn" onclick="resetChat()">Start Over</button>
+        </div>
+      `;
+
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    // Open WhatsApp with a pre-filled message
+    function buyProduct(productName, price) {
+      const message = encodeURIComponent(
+        `I want to buy ${decodeURIComponent(productName)} at ${price} Dhs.`
+      );
+      const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+      window.open(url, "_blank");
+    }
+
+    // Event listeners
+    document.getElementById("chatbot-send").addEventListener("click", handleUserMessage);
+    document
+      .getElementById("chatbot-input")
+      .addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          handleUserMessage();
+        }
+      });
+
+    // Toggle chatbot visibility (collapse/expand)
+    document.getElementById("chatbot-toggle").addEventListener("click", function () {
+      const chatbotBody = document.getElementById("chatbot-body");
+      if (chatbotBody.style.display === "none") {
+        chatbotBody.style.display = "flex";
+        this.textContent = "–";
+      } else {
+        chatbotBody.style.display = "none";
+        this.textContent = "+";
+      }
+    });
+  </script>
+  <!-- slider JS ENDS -->
+
+  <!-- content JS -->
+  <script src="content.js"></script>
+</body>
 </html>
