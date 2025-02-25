@@ -3,7 +3,7 @@ let contentTitle = [
     id: "1",
     name: "Handmade Bouquet",
     brand: "Crochetastic",
-    price: 50,
+    price: 100,
     preview: "img/content-1.jpeg",
     isAccessory: false
   },
