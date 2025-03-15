@@ -1,4 +1,32 @@
 let contentTitle = [
+  {
+    id: "11",
+    name: "Crochet Tulip Bouquet",
+    brand: "Crochetastic",
+    price: 10,
+    preview: "img/new-content-1.jpeg",
+    isAccessory: false,
+    description: "A charming floral arrangement featuring soft pink crochet tulips, delicate white flowers, and greenery in an elegant glass vase. Perfect for home décor or gifting! Price: 10 DHS each",
+    photos: [
+      "img/new-content-1(1).jpeg",
+      "img/new-content-1(2).jpeg",
+      "img/new-content-1(3).jpeg",
+      "img/new-content-1(4).jpeg"
+    ]
+  },
+  {
+    id: "12",
+    name: "Floral Wristbands",
+    brand: "Crochetastic",
+    price: 30,
+    preview: "img/new-content-2.png",
+    isAccessory: false,
+    description: "Designed for weddings, Eid, bridal parties, and special celebrations, these soft and comfortable accessories beautifully complement ethnic and festive attire. A perfect keepsake for bridesmaids, friends, and family to cherish the bond of love and togetherness! Price: 30 DHS each",
+    photos: [
+      "img/new-content-2.png",
+      "img/new-content-2(1).png"
+    ]
+  },
     {
       id: "1",
       name: "Handmade Bouquet",

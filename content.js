@@ -1,5 +1,21 @@
 let contentTitle = [
   {
+    id: "11",
+    name: "Crochet Tulip Bouquet",
+    brand: "Crochetastic",
+    price: 10,
+    preview: "img/new-content-1.jpeg",
+    isAccessory: false
+  },
+  {
+    id: "12",
+    name: "Floral Wristbands",
+    brand: "Crochetastic",
+    price: 30,
+    preview: "img/new-content-2.png",
+    isAccessory: false
+  },
+  {
     id: "1",
     name: "Handmade Bouquet",
     brand: "Crochetastic",
