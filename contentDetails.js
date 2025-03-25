@@ -1,5 +1,23 @@
 let contentTitle = [
   {
+    id: "13",
+    name: "Handmade Baby Booties",
+    brand: "Crochetastic",
+    price: 10,
+    preview: "img/new-content-3(4).jpeg",
+    isAccessory: false,
+    description: "Wrap your little one's feet in warmth and style with these adorable Handmade Baby Booties. Designed for newborns up to 6 months, these soft crochet shoes offer comfort and elegance with a delicate pink rose embellishment.",
+    photos: [
+      "img/new-content-3(1).jpeg",
+      "img/new-content-3(2).jpeg",
+      "img/new-content-3(3).jpeg",
+      "img/new-content-3(4).jpeg",
+      "img/new-content-3(5).jpeg",
+      "img/new-content-3(6).jpeg",
+      "img/new-content-3(7).jpeg",
+    ]
+  },
+  {
     id: "11",
     name: "Crochet Tulip Bouquet",
     brand: "Crochetastic",

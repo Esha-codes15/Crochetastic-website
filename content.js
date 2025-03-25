@@ -1,5 +1,13 @@
 let contentTitle = [
   {
+    id: "13",
+    name: "Handmade Baby Booties",
+    brand: "Crochetastic",
+    price: 10,
+    preview: "img/new-content-3(4).jpeg",
+    isAccessory: false
+  },
+  {
     id: "11",
     name: "Crochet Tulip Bouquet",
     brand: "Crochetastic",
