@@ -1,5 +1,34 @@
 let contentTitle = [
   {
+    id: "15",
+    name: "Panda Snuggle Set – Baby Blue Edition",
+    brand: "Crochetastic",
+    price: 100,
+    preview: "img/new-content-4(1).jpeg",
+    isAccessory: false,
+    description: "Wrap your little one in cozy cuteness with our Panda Snuggle Set! This hand-crocheted baby outfit features a soft, sky-blue hooded vest with charming panda face pockets and matching booties, perfect for keeping your baby warm and stylish.",
+    photos: [
+      "img/new-content-4(1).jpeg",
+      "img/new-content-4(2).jpeg",
+      "img/new-content-4(3).jpeg",
+      "img/new-content-4(4).jpeg",
+    ]
+  },
+  {
+    id: "14",
+    name: "Mini Bloom Crochet",
+    brand: "Crochetastic",
+    price: 10,
+    preview: "img/new-content-5(2).jpeg",
+    isAccessory: false,
+    description: "Brighten someone’s day with our adorable Mini Bloom Crochet Bouquets – a collection of handcrafted mini flower arrangements made entirely from yarn! Each bouquet features a charming mix of colorful blossoms tied with a matching bow, making them a perfect keepsake gift for loved ones.",
+    photos: [
+      "img/new-content-5(1).jpeg",
+      "img/new-content-5(2).jpeg",
+      "img/new-content-5(3).jpeg",
+    ]
+  },
+  {
     id: "13",
     name: "Handmade Baby Booties",
     brand: "Crochetastic",

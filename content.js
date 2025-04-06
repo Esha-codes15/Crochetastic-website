@@ -1,5 +1,21 @@
 let contentTitle = [
   {
+    id: "15",
+    name: "Panda Snuggle Set",
+    brand: "Crochetastic",
+    price: 100,
+    preview: "img/new-content-4(1).jpeg",
+    isAccessory: false
+  },
+  {
+    id: "14",
+    name: "Mini Bloom Crochet",
+    brand: "Crochetastic",
+    price: 10,
+    preview: "img/new-content-5(2).jpeg",
+    isAccessory: false
+  },
+  {
     id: "13",
     name: "Handmade Baby Booties",
     brand: "Crochetastic",
