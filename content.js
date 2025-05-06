@@ -3,7 +3,7 @@ let contentTitle = [
     id: "15",
     name: "Panda Snuggle Set",
     brand: "Crochetastic",
-    price: 100,
+    price: 200,
     preview: "img/new-content-4(1).jpeg",
     isAccessory: false
   },
@@ -11,7 +11,7 @@ let contentTitle = [
     id: "14",
     name: "Mini Bloom Crochet",
     brand: "Crochetastic",
-    price: 10,
+    price: 20,
     preview: "img/new-content-5(2).jpeg",
     isAccessory: false
   },
