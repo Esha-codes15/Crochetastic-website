@@ -1,20 +1,20 @@
 let contentTitle = [
     {
-    id: "16",
-    name: "Teddy Travel Nest",
-    brand: "Crochetastic",
-    price: 200,
-    preview: "img/new-content-6(1).jpeg",
-    isAccessory: false,
-    description: "Handcrafted with care and charm, the Teddy Travel Nest is an artisan crochet creation designed to enchant. A miniature suitcase opens to reveal a lovingly made teddy bear wrapped in a soft blanket, resting on a textured pillow. Thoughtfully made for collectors, gift-givers, and lovers of fine handmade items.",
-    photos: [
-      "img/new-content-6(1).jpeg",
-      "img/new-content-6(2).jpeg",
-      "img/new-content-6(3).jpeg",
-      "img/new-content-6(4).jpeg",
-      "img/new-content-6(5).jpeg",
-    ]
-  },
+  id: "16",
+  name: "Teddy Travel Nest",
+  brand: "Crochetastic",
+  price: 50,
+  preview: "img/new-content-6(1).jpeg",
+  isAccessory: false,
+  description: "Bring home a bundle of warmth and whimsy with the Teddy Travel Nest — a lovingly handcrafted crochet creation featuring a tiny teddy bear tucked inside a cozy suitcase bed. This enchanting set includes a mini suitcase, soft mattress, blanket, pillow, and the cutest sleeping teddy, making it a perfect gift, keepsake, or decor piece. Full Set (Suitcase + Teddy + Bedding): 200 DHS. Teddy Only: 50 DHS. Whether for a child’s playtime, a baby shower gift, or a unique collectible, this adorable piece is designed to bring joy at first sight. Lightweight, portable, and full of charm, the Teddy Travel Nest is ready to go wherever you do!",
+  photos: [
+    "img/new-content-6(1).jpeg",
+    "img/new-content-6(2).jpeg",
+    "img/new-content-6(3).jpeg",
+    "img/new-content-6(4).jpeg",
+    "img/new-content-6(5).jpeg"
+  ]
+    },
   {
     id: "15",
     name: "Panda Snuggle Set – Baby Blue Edition",
