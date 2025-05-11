@@ -1,11 +1,19 @@
 let contentTitle = [
+    {
+    id: "16",
+    name: "Teddy Travel Nest",
+    brand: "Crochetastic",
+    price: 80,
+    preview: "img/new-content-6(1).jpeg",
+    isAccessory: false
+  },
   {
     id: "15",
     name: "Panda Snuggle Set",
     brand: "Crochetastic",
     price: 200,
     preview: "img/new-content-4(1).jpeg",
-    isAccessory: false
+    isAccessory: true
   },
   {
     id: "14",

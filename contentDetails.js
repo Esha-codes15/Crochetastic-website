@@ -1,11 +1,27 @@
 let contentTitle = [
+    {
+    id: "16",
+    name: "Teddy Travel Nest",
+    brand: "Crochetastic",
+    price: 80,
+    preview: "img/new-content-6(1).jpeg",
+    isAccessory: false,
+    description: "Handcrafted with care and charm, the Teddy Travel Nest is an artisan crochet creation designed to enchant. A miniature suitcase opens to reveal a lovingly made teddy bear wrapped in a soft blanket, resting on a textured pillow. Thoughtfully made for collectors, gift-givers, and lovers of fine handmade items.",
+    photos: [
+      "img/new-content-6(1).jpeg",
+      "img/new-content-6(2).jpeg",
+      "img/new-content-6(3).jpeg",
+      "img/new-content-6(4).jpeg",
+      "img/new-content-6(5).jpeg",
+    ]
+  },
   {
     id: "15",
     name: "Panda Snuggle Set – Baby Blue Edition",
     brand: "Crochetastic",
     price: 100,
     preview: "img/new-content-4(1).jpeg",
-    isAccessory: false,
+    isAccessory: true,
     description: "Wrap your little one in cozy cuteness with our Panda Snuggle Set! This hand-crocheted baby outfit features a soft, sky-blue hooded vest with charming panda face pockets and matching booties, perfect for keeping your baby warm and stylish.",
     photos: [
       "img/new-content-4(1).jpeg",
