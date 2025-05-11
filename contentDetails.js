@@ -3,7 +3,7 @@ let contentTitle = [
     id: "16",
     name: "Teddy Travel Nest",
     brand: "Crochetastic",
-    price: 80,
+    price: 200,
     preview: "img/new-content-6(1).jpeg",
     isAccessory: false,
     description: "Handcrafted with care and charm, the Teddy Travel Nest is an artisan crochet creation designed to enchant. A miniature suitcase opens to reveal a lovingly made teddy bear wrapped in a soft blanket, resting on a textured pillow. Thoughtfully made for collectors, gift-givers, and lovers of fine handmade items.",

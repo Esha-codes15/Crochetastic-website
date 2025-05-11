@@ -3,7 +3,7 @@ let contentTitle = [
     id: "16",
     name: "Teddy Travel Nest",
     brand: "Crochetastic",
-    price: 80,
+    price: 200,
     preview: "img/new-content-6(1).jpeg",
     isAccessory: false
   },
