@@ -1,0 +1,130 @@
+[
+  {
+    "id": "16",
+    "name": "Teddy Travel Nest",
+    "brand": "Crochetastic",
+    "price": 50,
+    "preview": "img/new-content-6(1).jpeg",
+    "isAccessory": false
+  },
+  {
+    "id": "15",
+    "name": "Panda Snuggle Set",
+    "brand": "Crochetastic",
+    "price": 200,
+    "preview": "img/new-content-4(1).jpeg",
+    "isAccessory": true
+  },
+  {
+    "id": "14",
+    "name": "Mini Bloom Crochet",
+    "brand": "Crochetastic",
+    "price": 20,
+    "preview": "img/new-content-5(2).jpeg",
+    "isAccessory": false
+  },
+  {
+    "id": "13",
+    "name": "Handmade Baby Booties",
+    "brand": "Crochetastic",
+    "price": 50,
+    "preview": "img/new-content-3(4).jpeg",
+    "isAccessory": false
+  },
+  {
+    "id": "11",
+    "name": "Crochet Tulip Bouquet",
+    "brand": "Crochetastic",
+    "price": 10,
+    "preview": "img/new-content-1.jpeg",
+    "isAccessory": false
+  },
+  {
+    "id": "12",
+    "name": "Floral Wristbands",
+    "brand": "Crochetastic",
+    "price": 30,
+    "preview": "img/new-content-2.png",
+    "isAccessory": false
+  },
+  {
+    "id": "1",
+    "name": "Handmade Bouquet",
+    "brand": "Crochetastic",
+    "price": 100,
+    "preview": "img/content-1.jpeg",
+    "isAccessory": false
+  },
+  {
+    "id": "2",
+    "name": "Sunbeam Buddy",
+    "brand": "Crochetastic",
+    "price": 20,
+    "preview": "img/content-2(1).jpeg",
+    "isAccessory": false
+  },
+  {
+    "id": "3",
+    "name": "Pink Handbag",
+    "brand": "Crochetastic",
+    "price": 180,
+    "preview": "img/content-3(1).jpeg",
+    "isAccessory": false
+  },
+  {
+    "id": "4",
+    "name": "Crochet beanies",
+    "brand": "Crochetastic",
+    "price": 30,
+    "preview": "img/content-4(1).jpeg",
+    "isAccessory": false
+  },
+  {
+    "id": "5",
+    "name": "Bouquet Photo Frames",
+    "brand": "Crochetastic",
+    "price": 100,
+    "preview": "img/content-5(1).jpeg",
+    "isAccessory": false
+  },
+  {
+    "id": "6",
+    "name": "Autumn Bloom Wear",
+    "brand": "Crochetastic",
+    "price": 200,
+    "preview": "img/content2-1.jpeg",
+    "isAccessory": true
+  },
+  {
+    "id": "7",
+    "name": "Baby Bear Snuggle",
+    "brand": "Crochetastic",
+    "price": 150,
+    "preview": "img/content2-2.jpeg",
+    "isAccessory": true
+  },
+  {
+    "id": "8",
+    "name": "Bear Cub Hoodie",
+    "brand": "Crochetastic",
+    "price": 200,
+    "preview": "img/content2-3.jpeg",
+    "isAccessory": true
+  },
+  {
+    "id": "9",
+    "name": "Panda Snuggle Tee",
+    "brand": "Crochetastic",
+    "price": 200,
+    "preview": "img/content2-4.jpeg",
+    "isAccessory": true
+  },
+  {
+    "id": "10",
+    "name": "Neon Green Lily",
+    "brand": "Crochetastic",
+    "price": 250,
+    "preview": "img/content2-5.png",
+    "isAccessory": true
+  }
+]

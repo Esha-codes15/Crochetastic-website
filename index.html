@@ -539,8 +539,35 @@
     });
   </script>
   <!-- slider JS ENDS -->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  }
+</script>
+<script>const stored = JSON.parse(localStorage.getItem('contentTitle'));
+    const productss = stored || contentTitle;
+
+    const productList = document.getElementById('productList');
+
+    products.forEach(product => {
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML = `
+        <img src="${product.preview}" alt="${product.name}" />
+        <h3>${product.name}</h3>
+        <p>Brand: ${product.brand}</p>
+        <p>Price: ${product.price} Dhs</p>
+        <p>${product.isAccessory ? "Accessory" : "Main Product"}</p>
+      `;
+      productList.appendChild(card);
+    });</script>
 
   <!-- content JS -->
   <script src="content.js"></script>
+<script>
+  console.log(contentTitle); // This will have the full array with all products
+  // Render products dynamically here
+</script>
 </body>
 </html>

@@ -1,45 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crochetastic</title>
-    <!-- favicon -->
-    <link rel="icon" href="img/Crochetastic.png" type="image/gif" sizes="16x16">
-    <!-- EXTERNAL LINKS -->
-    <link rel="stylesheet" href="css/header.css">
-    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Header with Hamburger</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+    }
+
+    #container {
+      background-color: white;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    #shopName {
+      font-size: 32px;
+      font-family: 'Pacifico', cursive;
+      text-align: center;
+      flex-grow: 1;
+      position: relative;
+    }
+
+    #shopName a {
+      text-decoration: none;
+      color: #ff00bf;
+    }
+
+#adminPanel {
+    font-weight: bold;
+}
+
+#adminPanel a {
+    text-decoration: none;
+    color: #ff00bf;
+    font-family: "Poppins", sans-serif;
+}
+/* Hamburger Icon */
+#hamburger {
+    display: none;
+    font-size: 28px;
+    color: #ff00bf;
+    cursor: pointer;
+}
+
+/* Mobile Dropdown Menu */
+#mobileMenu {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    z-index: 9;
+}
+
+#mobileMenu a {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    font-weight: bold;
+    color: #ff00bf;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    #adminPanel {
+        display: none;
+    }
+
+    #hamburger {
+        display: block;
+    }
+}
+  </style>
 </head>
 <body>
-    
-    <header>
-        <section>
-            <!-- MAIN CONTAINER -->
-            <div id="container">
-                <!-- SHOP NAME -->
-                <div id="shopName"><a href="index.html"><i>
-                    Crochetastic</i> </a></div>
-                    <!-- COLLCETIONS ON WEBSITE -->
-                    <!-- <div id="collection">
-                        <div id="clothing"><a href="clothing.html"> CLOTHING </a></div>
-                        <div id="accessories"><a href="accessories.html"> ACCESSORIES </a></div>
-                    </div> -->
-                    <!-- SEARCH SECTION -->
-                    <!-- <div id="search">
-                        <i class="fas fa-search search"></i>
-                        <input type="text" id="input" name="searchBox" placeholder="Search for Clothing and Accessories">
-                    </div> -->
-                    <!-- USER SECTION (CART AND USER ICON) -->
-                    <!-- <div id="user">
-                        <a href="cart.html"> <i class="fas fa-shopping-cart addedToCart"><div id="badge"> 0 </div></i></a>
-                        <a href="#"> <i class="fas fa-user-circle userIcon"></i> </a>
-                    </div> -->
-            </div>
 
-        </section>
-    </header>
+<header>
+  <section>
+    <div id="container">
+      <!-- Hamburger Icon -->
+      <div id="hamburger" onclick="toggleMenu()">☰</div>
+
+      <!-- Centered Title -->
+      <div id="shopName">
+        <a href="index.html"><i>Crochetastic</i></a>
+      </div>
+
+      <!-- Desktop Admin Panel -->
+      <div id="adminPanel">
+        <a href="admin.html">Admin Panel</a>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu">
+      <a href="admin.html">Admin Panel</a>
+    </div>
+  </section>
+</header>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    if (menu.style.display === "flex") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "flex";
+    }
+  }
+
+  // Optional: close menu if clicking outside it
+  document.addEventListener('click', function(event) {
+    const menu = document.getElementById("mobileMenu");
+    const hamburger = document.getElementById("hamburger");
+    if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+      menu.style.display = "none";
+    }
+  });
+</script>
 
 </body>
 </html>
