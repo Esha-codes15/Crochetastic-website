@@ -43,21 +43,13 @@
   </form>
 
   <script>
-    async function getLastId() {
-      try {
-        const res = await fetch('/content.json');
-        const data = await res.json();
-        return data.length > 0 ? Math.max(...data.map(p => Number(p.id))) : 0;
-      } catch (err) {
-        console.error(err);
-        return 0;
-      }
-    }
-
     document.getElementById('productForm').addEventListener('submit', async e => {
       e.preventDefault();
       const status = document.getElementById('status');
-      const lastId = await getLastId();
+
+      // Get max id from localStorage or 0
+      const content = JSON.parse(localStorage.getItem('content') || '[]');
+      const lastId = content.length > 0 ? Math.max(...content.map(p => Number(p.id))) : 0;
       const id = lastId + 1;
 
       const newProduct = {
@@ -72,21 +64,40 @@
       const detailedProduct = {
         ...newProduct,
         description: document.getElementById('description').value.trim(),
-        photos: document.getElementById('photos').value.split(',').map(p => p.trim()).filter(p => p)
+        photos: document.getElementById('photos').value
+          .split(',')
+          .map(p => p.trim())
+          .filter(p => p)
       };
 
-      // Save to localStorage (or integrate GitHub API / backend later)
-      const content = JSON.parse(localStorage.getItem('content') || '[]');
-      content.unshift(newProduct);
-      localStorage.setItem('content', JSON.stringify(content));
+      try {
+        const res = await fetch('/api/addProduct', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ newProduct, detailedProduct })
+        });
+        const data = await res.json();
 
-      const contentDetail = JSON.parse(localStorage.getItem('contentdetail') || '[]');
-      contentDetail.unshift(detailedProduct);
-      localStorage.setItem('contentdetail', JSON.stringify(contentDetail));
+        if (res.ok) {
+          status.textContent = '✅ Product added (saved temporarily in serverless memory).';
+          status.className = 'success';
 
-      status.textContent = '✅ Product added (saved to browser only).';
-      status.className = 'success';
-      e.target.reset();
+          // Save locally so data persists in browser
+          content.unshift(newProduct);
+          localStorage.setItem('content', JSON.stringify(content));
+
+          const contentDetail = JSON.parse(localStorage.getItem('contentdetail') || '[]');
+          contentDetail.unshift(detailedProduct);
+          localStorage.setItem('contentdetail', JSON.stringify(contentDetail));
+
+          e.target.reset();
+        } else {
+          throw new Error(data.error || 'Failed to add product');
+        }
+      } catch (error) {
+        status.textContent = `❌ Error: ${error.message}`;
+        status.className = 'error';
+      }
     });
   </script>
 </body>
