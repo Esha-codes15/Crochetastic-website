@@ -1,4 +1,19 @@
 [
+   {
+    "id": "17",
+    "name": "Handmade Baby Booties",
+    "brand": "Crochetastic",
+    "price": 50,
+    "preview": "img/new-content-7(1).jpg",
+    "isAccessory": false,
+    "description": "Wrap your little one’s feet in warmth and comfort with these beautifully handmade baby booties. Crafted with love and care from soft, breathable yarn, these booties are gentle on delicate skin and perfect for keeping tiny toes cozy all day long.",
+    "photos": [
+      "img/new-content-7(2).jpg",
+      "img/new-content-7(3).jpg",
+      "img/new-content-7(3).jpg",
+      "img/new-content-7(4).jpg"
+    ]
+  },
   {
     "id": "16",
     "name": "Teddy Travel Nest",

@@ -1,4 +1,12 @@
 [
+    {
+    "id": "17",
+    "name": "Handmade Baby Booties",
+    "brand": "Crochetastic",
+    "price": 50,
+    "preview": "img/new-content-7(1).jpg",
+    "isAccessory": false
+  },
   {
     "id": "16",
     "name": "Teddy Travel Nest",
