@@ -1,4 +1,12 @@
 [
+    {
+    "id": "17",
+    "name": "Crochet beanies",
+    "brand": "Crochetastic",
+    "price": 500,
+    "preview": "img/new-content-6(1).jpeg",
+    "isAccessory": false
+  },
   {
     "id": "16",
     "name": "Teddy Travel Nest",
