@@ -1,4 +1,20 @@
 [
+    {
+    "id": "18",
+    "name": "Tulip Love Crochet Bouquet",
+    "brand": "Crochetastic",
+    "price": 30,
+    "preview": "img/new-content-8(1).jpeg",
+    "isAccessory": false
+  },
+    {
+    "id": "17",
+    "name": "AirPods Pouch",
+    "brand": "Crochetastic",
+    "price": 25,
+    "preview": "img/new-content-7(3).jpeg",
+    "isAccessory": false
+  },
   {
     "id": "16",
     "name": "Teddy Travel Nest",
