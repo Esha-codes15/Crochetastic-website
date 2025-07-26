@@ -1,4 +1,31 @@
 [
+    {
+    "id": "18",
+    "name": "Tulip Love Crochet Bouquet",
+    "brand": "Crochetastic",
+    "price": 30,
+    "preview": "img/new-content-8(1).jpeg",
+    "isAccessory": false,
+    "description": "Brighten someone's day with this charming handcrafted crochet tulip bouquet. Featuring two soft-knit tulips in soothing shades of mint and blue, wrapped elegantly with satin ribbon and delicate paper, it's the perfect everlasting gift for birthdays, anniversaries, or just because.",
+    "photos": [
+      "img/new-content-8(1).jpeg",
+      "img/new-content-8(2).jpeg"
+    ]
+  },
+  {
+    "id": "17",
+    "name": "AirPods Pouch",
+    "brand": "Crochetastic",
+    "price": 25,
+    "preview": "img/new-content-7(3).jpeg",
+    "isAccessory": false,
+    "description": "vintage touch to your tech with this handcrafted crochet AirPods pouch. Made with soft yarn in elegant cream and maroon tones, this cover blends traditional granny square charm with modern utility. Designed for a snug fit and easy access, it's perfect for protecting your AirPods while showing off your style.",
+    "photos": [
+      "img/new-content-7(1).jpeg",
+      "img/new-content-7(2).jpeg",
+      "img/new-content-7(3).jpeg"
+    ]
+  },
   {
     "id": "16",
     "name": "Teddy Travel Nest",
