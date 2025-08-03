@@ -1,4 +1,12 @@
 [
+      {
+    "id": "19",
+    "name": "Hello Kitty Bouquet",
+    "brand": "Crochetastic",
+    "price": 70,
+    "preview": "img/new-content-9(4).jpeg",
+    "isAccessory": false
+  },
     {
     "id": "18",
     "name": "Tulip Love Crochet Bouquet",
