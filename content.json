@@ -1,4 +1,12 @@
 [
+    {
+    "id": "20",
+    "name": "Puffles the Penguin",
+    "brand": "Crochetastic",
+    "price": 70,
+    "preview": "img/new-content-10(1).jpeg",
+    "isAccessory": false
+  },
       {
     "id": "19",
     "name": "Hello Kitty Bouquet",

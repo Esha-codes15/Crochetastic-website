@@ -1,4 +1,20 @@
 [
+   {
+    "id": "20",
+    "name": "Puffles the Penguin",
+    "brand": "Crochetastic",
+    "price": 70,
+    "preview": "img/new-content-10(1).jpeg",
+    "isAccessory": false,
+    "description": "Meet Puffles the Penguin, your new snuggly companion! 🐧✨ Handcrafted with love using soft yarn, this adorable crochet plushie is perfect for cuddles, gifts, or as a charming decor piece. With its big sparkly eyes, tiny yellow beak, and flappy wings, Puffles is here to bring warmth and smiles to your day.",
+    "photos": [
+      "img/new-content-10(2).jpeg",
+      "img/new-content-10(3).jpeg",
+      "img/new-content-10(4).jpeg",
+      "img/new-content-10(5).jpeg",
+      "img/new-content-10(6).jpeg"
+    ]
+  },
       {
     "id": "19",
     "name": "Hello Kitty Bouquet",
